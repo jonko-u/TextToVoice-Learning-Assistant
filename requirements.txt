@@ -20,6 +20,7 @@ cryptography @ file:///C:/b/abs_f4do8t8jfs/croot/cryptography_1694444424531/work
 debugpy @ file:///C:/b/abs_c0y1fjipt2/croot/debugpy_1690906864587/work
 decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
 defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
+dnspython==2.4.2
 entrypoints @ file:///C:/ci_311/entrypoints_1676423328987/work
 executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
 fastjsonschema @ file:///C:/ci_311/python-fastjsonschema_1679500568724/work
@@ -82,6 +83,7 @@ pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 pydub==0.25.1
 pygame==2.5.2
 Pygments @ file:///C:/b/abs_fay9dpq4n_/croot/pygments_1684279990574/work
+pymongo==4.6.0
 pyOpenSSL @ file:///C:/b/abs_08f38zyck4/croot/pyopenssl_1690225407403/work
 PyQt5==5.15.7
 PyQt5-sip @ file:///C:/ci_311/pyqt-split_1676428895938/work/pyqt_sip
@@ -89,6 +91,7 @@ pyrsistent @ file:///C:/ci_311/pyrsistent_1676422695500/work
 PySocks @ file:///C:/ci_311/pysocks_1676425991111/work
 pytesseract==0.3.10
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+python-dotenv==1.0.0
 python-json-logger @ file:///C:/b/abs_cblnsm6puj/croot/python-json-logger_1683824130469/work
 pytz @ file:///C:/b/abs_19q3ljkez4/croot/pytz_1695131651401/work
 pywin32==305.1

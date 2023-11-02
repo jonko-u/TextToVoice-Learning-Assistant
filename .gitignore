@@ -1,0 +1,4 @@
+**/__pycache__/
+
+*.env
+*download_models_from_HG.py
