@@ -1,6 +1,9 @@
 import pymongo
 from dotenv import load_dotenv
 import os
+
+from datetime import datetime
+
 load_dotenv()
 
 mongodb_url = os.getenv('MONGODB_LOCAL_URL')
@@ -43,8 +46,25 @@ class DbManagement:
                 'subject': self.subject,
                 'page': str(page_iterator),
                 'content': self.text                
-            }
-        }
+            },
+            "timestamp": datetime.now()  # Add the current timestamp to the document       
+}
 
         # Insert the dictionary into the collection
         collection.insert_one(target_dict)
+    
+    def find_last_page(self):
+        
+        # Connect to MongoDB
+        db = self.get_mongodb_connection()
+        
+        # Select a collection
+        collection = db[mongodb_collection]  # Replace with your collection name
+
+        # Define the timestamp field to sort by (assuming a "timestamp" field in your documents)
+        timestamp_field = "timestamp"
+
+        # Query the latest document
+        latest_document = collection.find_one(sort=[(timestamp_field, pymongo.DESCENDING)])
+
+        return latest_document['Content']['page']

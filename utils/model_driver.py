@@ -48,7 +48,7 @@ class AppInterface:
         right_frame.pack(side="right", fill="y", padx=10)  # Adjust padx as needed
 
         # Create a green button in the right half
-        green_button = tk.Button(right_frame, text="Green Button", bg="green", command= self.capture_screenshot_to_db)
+        green_button = tk.Button(right_frame, text="Capture to db", bg="green", command= self.capture_screenshot_to_db)
         green_button.pack(side="right")
         
         for lang, lang_data in languages.items():
@@ -108,11 +108,14 @@ class AppInterface:
         print(screenshot)
         text = pytesseract.image_to_string(screenshot)
         cleaned_text = text.replace("\n", " \n ")
+        
         print(cleaned_text)
         n_subjects = 15
         name_module = 'Empresa e iniciativa emprendedora'
-        subject = 'La Iniciativa Emprendedora'
-        self.capture_count += 1
-        db_management = DbManagement(n_subjects=n_subjects, text=cleaned_text, name_module=name_module, subject=subject)
-        db_management.add_text_to_db(page_iterator=self.capture_count)
+        subject = 'El empresario'
         
+        db_management = DbManagement(n_subjects=n_subjects, text=cleaned_text, name_module=name_module, subject=subject)
+        # self.capture_count += 1
+        self.capture_count = int(db_management.find_last_page()) + 1
+        db_management.add_text_to_db(page_iterator=self.capture_count)
+        db_management.find_last_page()
